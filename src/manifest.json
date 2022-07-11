@@ -1,0 +1,26 @@
+{
+    "name": "Blade Bot",
+    "description": "Flip some knives and get this bread!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+      "default_popup": "./popup/popup.html",
+      "default_icon": {
+        "16": "/images/halfface16.png",
+        "32": "/images/halfface32.png",
+        "48": "/images/halfface48.png",
+        "128": "/images/halfface128.png"
+      }
+    },
+    "icons": {
+      "16": "/images/halfface16.png",
+      "32": "/images/halfface32.png",
+      "48": "/images/halfface48.png",
+      "128": "/images/halfface128.png"
+    },
+    "options_page": "options.html"
+  }
