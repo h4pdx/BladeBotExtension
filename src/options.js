@@ -1,28 +1,13 @@
 function constructInput() {
   let input = document.getElementById("keyword")
-
+  let button = document.getElementById("save");
+  
+  button.addEventListener("click", handleInput);
   chrome.storage.sync.get("keywords", function(result) {
     if (result.keywords) {
       input.value = result.keywords;
     }
   });
-
-  constructButton();
-}
-
-function constructButton() {
-  let button = document.getElementById("button");
-  button.addEventListener("click", handleInput);
-}
-
-function handleInput() {
-  let keyword = document.getElementById("keyword").value;
-  let keywords = keyword.split(",");
-
-  chrome.storage.sync.set({ keywords: keywords });
-  
-  showSuccess();
-  console.log('Keywords set to ' + keywords);
 }
 
 function showSuccess() {
@@ -36,6 +21,16 @@ function showSuccess() {
   setTimeout(() => {
     success.removeChild(successMsg);
   }, 4000);
+}
+
+function handleInput() {
+  let keyword = document.getElementById("keyword").value;
+  let keywords = keyword.split(",");
+
+  chrome.storage.sync.set({ keywords: keywords });
+  
+  showSuccess();
+  console.log('Keywords set to ' + keywords);
 }
 
 constructInput();

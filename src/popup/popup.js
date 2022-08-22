@@ -22,3 +22,17 @@
 //         document.body.style.backgroundColor = color;
 //     });
 // }
+
+function initLaunchButton() {
+  let launchButton = document.getElementById("launch");
+  launchButton.addEventListener("click", handleLaunch);
+}
+
+function handleLaunch() {
+    let url = "https://youtu.be/Ns7Z8ag4oSY";
+  console.log("launching" + url);
+  window.location.replace(url);
+//   chrome.tabs.create({ url: "https://youtu.be/Ns7Z8ag4oSY" });
+}
+
+initLaunchButton();
